@@ -11,6 +11,7 @@ type Tile struct {
 	Size     rl.Rectangle
 	Occupied bool
 	Color    rl.Color
+	TileID   int
 }
 
 func NewTile(position rl.Vector2, size rl.Rectangle) *Tile {

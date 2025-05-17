@@ -5,13 +5,15 @@ import rl "github.com/gen2brain/raylib-go/raylib"
 const (
 	TILE_SIZE      = 32
 	SCREEN_WIDTH   = 640
-	SCREEN_HEIGHT  = 360
+	SCREEN_HEIGHT  = 700
 	CHAMBER_WIDTH  = 10
 	CHAMBER_HEIGHT = 20
 )
 
 var (
-	CHAMBER_POS_X = (SCREEN_WIDTH - (CHAMBER_WIDTH * TILE_SIZE)) / 2
+	//this pos can be used to center the chamber in the screen.
+	//CHAMBER_POS_X = (SCREEN_WIDTH - (CHAMBER_WIDTH * TILE_SIZE)) / 2
+	CHAMBER_POS_X = SCREEN_WIDTH / 20
 	CHAMBER_POS_Y = (SCREEN_HEIGHT - (CHAMBER_HEIGHT * TILE_SIZE)) / 2
 )
 
