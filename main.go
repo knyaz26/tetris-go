@@ -3,11 +3,35 @@ package main
 import (
 	"runtime"
 
-	ct "tetris-go/constants"
+	ct "tetris-go/constants" // Import the input package
 	"tetris-go/tile"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
+
+func main() {
+	runtime.LockOSThread()
+
+	rl.InitWindow(ct.SCREEN_WIDTH, ct.SCREEN_HEIGHT, "Tetris")
+	rl.SetTargetFPS(60)
+
+	//this returns a slice of type tiles.
+	tiles := drawChamber()
+
+	for !rl.WindowShouldClose() {
+		rl.BeginDrawing()
+
+		rl.ClearBackground(ct.Palette["Sky"])
+
+		drawTiles(tiles)
+
+		rl.EndDrawing()
+	}
+
+	rl.CloseWindow()
+}
+
+//************************************************************************//
 
 func drawChamber() []*tile.Tile {
 	tiles := []*tile.Tile{}
@@ -34,26 +58,4 @@ func drawTiles(tiles []*tile.Tile) {
 	for _, t := range tiles {
 		t.Draw()
 	}
-}
-
-func main() {
-	runtime.LockOSThread()
-
-	rl.InitWindow(ct.SCREEN_WIDTH, ct.SCREEN_HEIGHT, "Tetris")
-	rl.SetTargetFPS(60)
-
-	//this returns a slice of tiles type.
-	tiles := drawChamber()
-
-	for !rl.WindowShouldClose() {
-		rl.BeginDrawing()
-
-		rl.ClearBackground(ct.Palette["Sky"])
-
-		drawTiles(tiles)
-
-		rl.EndDrawing()
-	}
-
-	rl.CloseWindow()
 }
