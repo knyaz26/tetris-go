@@ -3,7 +3,7 @@ package main
 import (
 	"runtime"
 
-	ct "tetris-go/constants" // Import the input package
+	ct "tetris-go/constants"
 	"tetris-go/tile"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
@@ -31,7 +31,7 @@ func main() {
 	rl.CloseWindow()
 }
 
-//************************************************************************//
+//***************************************************************************************************//
 
 func drawChamber() []*tile.Tile {
 	tiles := []*tile.Tile{}
